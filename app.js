@@ -168,19 +168,19 @@ function switchTab(tab) {
     refreshContent(tab);
 }
 
-// Add tap support for mobile
-function openModelPreview(modelId) {
+// Cache models for mobile tap
+let modelsCache = [];
+
+// Make openModelPreview globally available
+window.openModelPreview = function(modelId) {
     // On mobile, show a full-screen preview or download dialog
     const model = modelsCache.find(m => m.id === modelId);
     if (model) {
         if (confirm(`Download ${model.name}?`)) {
-            downloadModel(modelId, model.url);
+            downloadModel(model.id, model.url);
         }
     }
 }
-
-// Cache models for mobile tap
-let modelsCache = [];
 
 // Update refreshContent to cache models
 async function refreshContent(category) {
