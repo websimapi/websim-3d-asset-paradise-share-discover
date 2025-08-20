@@ -1,0 +1,34 @@
+{
+  "database": {
+    "schema": {
+      "models": {
+        "id": {
+          "type": "uuid"
+        },
+        "name": {
+          "type": "text"
+        },
+        "description": {
+          "type": "text"
+        },
+        "filename": {
+          "type": "text"
+        },
+        "url": {
+          "type": "text"
+        },
+        "size": {
+          "type": "integer"
+        },
+        "fileType": {
+          "type": "text"
+        },
+        "downloads": {
+          "type": "integer"
+        }
+      }
+    },
+    "instructions": "Share 3D models with others! Upload models in common formats like GLB, GLTF, OBJ, or FBX. All uploaded files will be stored in blob storage and made available for others to download. Each model has a name, description, download count, and is automatically tracked by username. The models collection includes all this metadata for easy querying and leaderboard generation."
+  }
+}
+
